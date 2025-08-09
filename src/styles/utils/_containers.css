@@ -1,0 +1,62 @@
+.g-page-size {
+  /* base: < 640px */
+  width: 95% !important;
+  margin: 0 auto;
+
+
+  @media (min-width: 640px) {
+    /* sm */
+    width: 90%;
+  }
+
+  @media (min-width: 768px) {
+    /* md */
+    width: 90%;
+    padding: 0 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    /* lg */
+    width: 85%;
+  }
+
+  @media (min-width: 1280px) {
+    /* xl */
+    width: 85%;
+  }
+
+  @media (min-width: 1536px) {
+    /* 2xl */
+    width: 85%;
+  }
+}
+
+.g-container-75 {
+  margin-right: auto;
+  margin-left: auto;
+  width: 75%;
+}
+
+.g-container-80 {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+
+.g-container-85 {
+  margin-right: auto;
+  margin-left: auto;
+  width: 85%;
+}
+
+.g-container-90 {
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+}
+
+.g-container-95 {
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+}

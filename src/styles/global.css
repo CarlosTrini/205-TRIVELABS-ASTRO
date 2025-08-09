@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import './utils/_tags.css';
+
+
+
+
+:root {
+    /* LIGHT MODE */
+
+
+    /*FONT*/
+    --font-bevan-italic: Bevan-Italic;
+    --font-bevan-regular: Bevan-Regular;
+    --font-inika-regular: Inika-Regular;
+    --font-inika-bold: Inika-Bold;
+
+
+    /* SIZES */
+
+    /* --page-size-xs: 0px;
+--page-size-sm: 640px;
+--page-size-md: 768px;
+--page-size-lg: 1024px;
+--page-size-xl: 1280px;
+--page-size-2xl: 1536px; */
+
+}
+
+
+
+
+/* body[data-theme="dark"] {} */
+
+
+
+
+@font-face {
+    font-family: 'Bevan-Regular';
+    src: url('/fonts/Bevan-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bevan-Italic';
+    src: url('/fonts/Bevan-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Inika-Regular';
+    src: url('/fonts/Inika-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inika-Bold';
+    src: url('/fonts/Inika-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

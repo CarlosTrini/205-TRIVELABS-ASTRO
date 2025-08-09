@@ -1,0 +1,58 @@
+html {
+    font-size: 62.5%;
+    /* Esto hace que 1rem sea igual a 10px */
+}
+
+/* --- Títulos (Headings) --- */
+
+h1 {
+    font-size: 4.2rem;
+    /* Equivalente a 42px - Título principal de página */
+}
+
+h2 {
+    font-size: 3.2rem;
+    /* Equivalente a 32px - Títulos de sección importantes */
+}
+
+h3 {
+    font-size: 2.4rem;
+    /* Equivalente a 24px - Subtítulos */
+}
+
+h4 {
+    font-size: 1.8rem;
+    /* Equivalente a 18px - Títulos menores o para destacar */
+}
+
+h5 {
+    font-size: 1.6rem;
+    /* Equivalente a 16px - Puede ser usado para etiquetas o títulos muy pequeños */
+}
+
+h6 {
+    font-size: 1.6rem;
+    /* Equivalente a 16px - Similar a h5, a menudo el mismo tamaño que el texto del párrafo */
+}
+
+
+/* --- Párrafos (Paragraphs) --- */
+
+p {
+    font-size: 1.6rem;
+    /* Equivalente a 16px - Tamaño estándar para el texto del cuerpo, muy legible */
+}
+
+/* Para texto secundario o más pequeño (por ejemplo, captions, letra pequeña) */
+.small-text {
+    font-size: 1.4rem;
+    /* Equivalente a 14px */
+}
+
+
+
+
+img {
+    width: 100%;
+    height: 100%;
+}
