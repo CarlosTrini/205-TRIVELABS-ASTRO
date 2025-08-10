@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @import './utils/_tags.css';
+@import './utils/_generics.css';
+@import './utils/_fonts.css';
+@import './utils/_containers.css';
+@import './utils/_colors.css';
+
 
 
 
