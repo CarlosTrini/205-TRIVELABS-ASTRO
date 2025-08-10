@@ -60,3 +60,24 @@
   margin-left: auto;
   width: 95%;
 }
+
+
+.g-padding-75 {
+  padding: 0 calc((100vw - 75vw) /2);
+  margin: auto;
+}
+
+.g-padding-80 {
+  padding: 0 calc((100vw - 80vw) /2);
+  margin: auto;
+}
+
+.g-padding-85 {
+  padding: 0 calc((100vw - 85vw) /2);
+  margin: auto;
+}
+
+.g-padding-90 {
+  padding: 0 calc((100vw - 90vw) /2);
+  margin: auto;
+}
