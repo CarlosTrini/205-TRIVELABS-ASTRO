@@ -1,0 +1,19 @@
+BREAKPOINTS
+
+    /* Extra min: móviles (hasta 399px) */
+    /* --breakpoint-xs: (min: 400); */
+
+    /* Small: móviles modernos en landscape y tablets pequeñas */
+    /* --breakpoint-sm: (min-width: 640px); */
+
+    /* Medium: tablets (ej. iPad) */
+    /* --breakpoint-md: (min-width: 768px); */
+
+    /* Large: laptops y escritorios pequeños */
+    /* --breakpoint-lg: (min-width: 1024px); */
+
+    /* Extra large: escritorios estándar */
+    /* --breakpoint-xl: (min-width: 1280px); */
+
+    /* 2x large: pantallas grandes */
+    /* --breakpoint-2xl: (min-width: 1536px); */

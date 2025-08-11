@@ -1,5 +1,9 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import HeaderNavMobile from "@components/headerNav/HeaderNavMobile.astro";
+import BaseHead from "@components/BaseHead.astro";
+
+import css from "@styles/layout/layout.module.css";
+
 const {
 	title = "",
 	description = "",
@@ -12,6 +16,8 @@ const {
 		<BaseHead title={title} description={description} image={image} />
 	</head>
 	<body>
+		<HeaderNavMobile />
+
 		<slot />
 	</body>
 </html>

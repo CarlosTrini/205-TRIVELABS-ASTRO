@@ -3,6 +3,12 @@ html {
     /* Esto hace que 1rem sea igual a 10px */
 }
 
+body {
+    background-color: var(--color-secondary);
+    font-family: var(--font-inika-regular);
+    letter-spacing: .2rem;
+}
+
 /* --- Títulos (Headings) --- */
 
 h1 {
@@ -49,10 +55,20 @@ p {
     /* Equivalente a 14px */
 }
 
-
-
-
 img {
     width: 100%;
     height: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }

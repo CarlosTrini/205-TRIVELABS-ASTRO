@@ -1,0 +1,120 @@
+/* HERO SECTION */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    padding: var(--padding-85);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    background: url('/images/pattern-hero.png') center/cover;
+    font-family: var(--font-bevan-regular);
+
+
+    @media (min-width: 768px) {
+        padding: var(--padding-80);
+        background: url('/images/pattern-hero-big.png') center/cover;
+    }
+
+
+
+}
+
+.hero-title {
+
+    text-align: center;
+    font-size: 4rem;
+    color: var(--color-senary);
+
+    @media (min-width: 640px) {
+        font-size: 4.5rem;
+    }
+
+    @media (min-width: 1360px) {
+        width: 80%;
+    }
+}
+
+.hero-description {
+    text-align: center;
+    letter-spacing: .2rem;
+    color: var(--color-quinary);
+
+    h3 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        margin-top: 3rem;
+        font-size: 1.6rem;
+        line-height: 3.5rem;
+    }
+
+    @media (min-width: 1360px) {
+        width: 50%;
+    }
+
+
+}
+
+.contact-btn {
+    border: .2rem solid var(--color-senary);
+    color: var(--color-senary);
+    box-shadow: 0 0 0.8rem 0 var(--color-senary);
+}
+
+.modal-contact-form {}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-inika-bold) !important;
+
+
+    label {
+        margin-bottom: .5rem;
+        font-size: 1.4rem;
+    }
+
+    input,
+    textarea {
+        width: 80%;
+        margin: auto;
+        border: .2rem solid var(--color-quinary);
+        box-shadow: 0 0 .4rem 0 var(--color-tertiary);
+        border-radius: .5rem;
+        padding: .8rem;
+        resize: none;
+        font-size: 1.4rem;
+        transition: all .4s ease-in-out;
+
+        &:focus,
+        &:hover {
+            outline: none;
+            border-color: var(--color-secondary);
+        }
+    }
+
+    textarea {
+        height: 10rem;
+    }
+
+}
+
+.error-input {
+    display: none;
+    width: 80%;
+    color: #d81111;
+    font-size: 1.3rem;
+    text-align: end;
+    margin: .5rem auto 0 auto;
+}
+
+.form-submit {
+    background-color: var(--color-quaternary);
+    color: var(--color-white-full);
+    text-align: center;
+    margin: 1.4rem auto 0 auto;
+}

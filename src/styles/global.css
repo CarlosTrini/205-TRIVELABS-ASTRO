@@ -1,11 +1,26 @@
 @import "tailwindcss";
 @import './utils/_tags.css';
+@import './utils/_generics.css';
+@import './utils/_fonts.css';
+@import './utils/_containers.css';
+@import './utils/_colors.css';
 
 
 
 
 :root {
     /* LIGHT MODE */
+    --color-white: #faf7f7;
+    --color-dark: #141414;
+    --color-white-full: #faf7f7;
+    --color-dark-full: #000000;
+    --color-primary: #2A3EAE;
+    --color-secondary: #010D26;
+    --color-tertiary: #023E73;
+    --color-quaternary: #3876F2;
+    --color-quinary: #C9DFF2;
+    --color-senary: #D8C819;
+    --color-octonary: #0B1630;
 
 
     /*FONT*/
@@ -14,22 +29,36 @@
     --font-inika-regular: Inika-Regular;
     --font-inika-bold: Inika-Bold;
 
+    --padding-75: 0 calc((100vw - 75vw) /2);
+    --padding-80: 0 calc((100vw - 80vw) /2);
+    --padding-85: 0 calc((100vw - 85vw) /2);
+    --padding-90: 0 calc((100vw - 90vw) /2);
+    --padding-95: 0 calc((100vw - 95vw) /2);
 
     /* SIZES */
-
-    /* --page-size-xs: 0px;
---page-size-sm: 640px;
---page-size-md: 768px;
---page-size-lg: 1024px;
---page-size-xl: 1280px;
---page-size-2xl: 1536px; */
-
+    /* --size-75-percent: 75%;
+    --size-80-percent: 80%;
+    --size-85-percent: 85%;
+    --size-90-percent: 90%;
+    --size-95-percent: 95%; */
 }
 
 
 
 
-/* body[data-theme="dark"] {} */
+/* DARK MODE */
+/* body[data-theme="dark"] {
+  --color-body:; 
+  --color-white:;
+  --color-dark:faf7f7;
+  --color-white-full:;
+  --color-dark-full:;
+--color-primary:; 
+--color-secondary:; 
+--color-tertiary:; 
+--color-quaternary:; 
+--color-quinary:; 
+} */
 
 
 

@@ -1,12 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import ContactHeroModal from "@components/ContactHeroModal";
+import css from "@styles/pages/home.module.css";
 ---
 
 <Layout title="test" description="test description">
-	<div class="bg-indigo-500 py-[10px]">
-		<p>Plantilla astro</p>
-		<p>
-			todo ok... si ves el fondo color azul, tailwind está ok también...
-		</p>
-	</div>
+    <section class={`${css["hero"]} `}>
+        <h1 class={`${css["hero-title"]}`}>
+            Construimos tu presencia digital. Soluciones web que crecen contigo.
+        </h1>
+        <div class={`${css["hero-description"]}`}>
+            <h3>Soluciones web que crecen contigo.</h3>
+            <p>
+                Desarrollamos sitios web rápidos, funcionales y adaptados a tu
+                negocio. Desde la landing hasta tu web completa, cada línea de
+                código con propósito.
+            </p>
+        </div>
+        <ContactHeroModal client:load />
+    </section>
 </Layout>

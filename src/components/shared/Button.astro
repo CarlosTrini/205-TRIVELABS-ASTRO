@@ -1,0 +1,47 @@
+---
+interface Props {
+    classButton?: string;
+    id?: string;
+    type?: "button" | "submit" | "reset";
+    disabled?: boolean;
+    textButton?: string;
+    iconSrc?: string;
+    iconClass?: string;
+    iconAlt?: string;
+    iconTitle?: string;
+    iconPosition?: "left" | "right";
+}
+
+const {
+    classButton = "",
+    id = "",
+    type = "button",
+    disabled = false,
+    textButton = "",
+    iconSrc = "",
+    iconClass = "",
+    iconAlt = "",
+    iconTitle = "",
+    iconPosition = "left",
+} = Astro.props;
+---
+
+<button class={`${classButton}`} id={id} type={type} disabled={disabled}>
+    {
+        iconSrc && iconSrc !== "" && iconPosition === "left" && (
+            <div class={iconClass}>
+                <img src={iconSrc} alt={iconAlt} title={iconTitle} />
+            </div>
+        )
+    }
+
+    {textButton}
+
+    {
+        iconSrc && iconSrc !== "" && iconPosition === "right" && (
+            <div class={`${iconClass}`}>
+                <img src={iconSrc} alt={iconAlt} title={iconTitle} />
+            </div>
+        )
+    }
+</button>

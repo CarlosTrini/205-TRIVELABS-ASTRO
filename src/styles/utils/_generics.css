@@ -1,0 +1,11 @@
+.g-button-rounded {
+    padding: 1.2rem 2rem;
+    border-radius: 4.5rem;
+    font-size: 1.6rem;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

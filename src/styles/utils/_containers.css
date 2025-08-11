@@ -1,8 +1,12 @@
 .g-page-size {
-  /* base: < 640px */
-  width: 95% !important;
+  width: 80%;
+  max-width: 1500px;
   margin: 0 auto;
 
+  @media (max-width: 639px) {
+    /* xs */
+    width: 95%;
+  }
 
   @media (min-width: 640px) {
     /* sm */
@@ -11,23 +15,23 @@
 
   @media (min-width: 768px) {
     /* md */
-    width: 90%;
-    padding: 0 5rem;
+    width: 85%;
   }
 
   @media (min-width: 1024px) {
     /* lg */
-    width: 85%;
+    width: 80%;
   }
 
   @media (min-width: 1280px) {
     /* xl */
-    width: 85%;
+    width: 75%;
   }
 
   @media (min-width: 1536px) {
     /* 2xl */
-    width: 85%;
+    width: 70%;
+    max-width: 1500px;
   }
 }
 
@@ -59,4 +63,24 @@
   margin-right: auto;
   margin-left: auto;
   width: 95%;
+}
+
+.g-padding-75 {
+  padding: 0 calc((100vw - 75vw) /2);
+  margin: auto;
+}
+
+.g-padding-80 {
+  padding: 0 calc((100vw - 80vw) /2);
+  margin: auto;
+}
+
+.g-padding-85 {
+  padding: 0 calc((100vw - 85vw) /2);
+  margin: auto;
+}
+
+.g-padding-90 {
+  padding: 0 calc((100vw - 90vw) /2);
+  margin: auto;
 }

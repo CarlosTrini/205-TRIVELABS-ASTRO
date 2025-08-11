@@ -1,0 +1,192 @@
+---
+import logoWhite from "@assets/images/LOGO.png";
+import logoYellow from "@assets/images/LOGO-YELLOW.png";
+import closeIcon from "@assets/images/close-icon.png";
+import lightIcon from "@assets/images/light.png";
+import logoHamburguer from "@assets/images/menu-hamburguer.png";
+
+import Image from "astro/components/Image.astro";
+---
+
+<style>
+    .h-mobile {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 0.4rem 0 var(--color-quinary);
+        background-color: var(--color-octonary);
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+    .h-mobile__logo {
+        width: 10rem;
+        height: 8rem;
+    }
+    .h-mobile__hamburguer {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .mobile-nav-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--color-dark-full);
+        overflow: hidden;
+    }
+
+    .mobile-nav__show {
+        min-height: 100vh;
+        width: 100%;
+        min-height: 100vh;
+        transform: translateX(0);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-nav__hide {
+        width: 0;
+        transform: translateX(-100%) translateY(-100%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-nav__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-nav__header--logo {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .mobile-nav__list {
+        /* background-color: blue; */
+        margin-top: 2rem;
+        li {
+            padding: 2rem;
+            transition: all 0.3s ease-in-out;
+
+            a {
+                display: inline-block;
+                width: 100%;
+                font-size: 2rem;
+                font-family: var(--font-bevan-regular);
+                color: var(--color-quinary);
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                background-color: var(--color-tertiary);
+                box-shadow: 0 0 0.5rem 0 var(--color-quinary);
+                width: 100%;
+                a {
+                    transform: translateX(10%);
+                    color: var(--color-senary);
+                }
+            }
+        }
+    }
+
+    .mobile-nav__footer {
+        display: flex;
+        margin-top: 3rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 3.5rem;
+    }
+
+    .mobile-nav__footer--close {
+        width: 3rem;
+        height: 3rem;
+    }
+    .mobile-nav__footer--quote {
+        display: flex;
+        gap: 0.5rem;
+        border: 0.2rem solid var(--color-quinary);
+        color: var(--color-quinary);
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            box-shadow: 0 0 0.6rem 0 var(--color-quinary);
+            border-color: var(--color-senary);
+            color: var(--color-senary);
+        }
+
+        div {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+</style>
+
+<header class={`g-padding-90 h-mobile`}>
+    <div class={`h-mobile__logo`}>
+        <Image src={logoWhite} alt="Logo triveLabs mobile" title="TriveLabs" />
+    </div>
+    <div class={`h-mobile__hamburguer`}>
+        <button id="hamburguerButton">
+            <Image
+                src={logoHamburguer}
+                alt="icono menu. Click para abrir el menú"
+                title="abrir menu"
+            />
+        </button>
+    </div>
+</header>
+
+<nav class={`mobile-nav-container mobile-nav__hide`} id="navContentMobile">
+    <header class={`mobile-nav__header`}>
+        <div class={`mobile-nav__header--logo`}>
+            <Image
+                src={logoYellow}
+                alt={"TriveLabs logo"}
+                title={"TriveLabs"}
+            />
+        </div>
+    </header>
+    <ul class={`mobile-nav__list`}>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#blog">Blog</a></li>
+    </ul>
+    <footer class={`mobile-nav__footer`}>
+        <button class="g-button-rounded mobile-nav__footer--quote">
+            <div>
+                <Image
+                    src={lightIcon}
+                    alt={"cotiza tu idea"}
+                    title={"Cotiza tu idea"}
+                />
+            </div>
+            Cotiza tu idea
+        </button>
+        <button class={`mobile-nav__footer--close`} id="closeNavMobile">
+            <Image src={closeIcon} alt={"cerrar menú"} title={"Cerrar menú"} />
+        </button>
+    </footer>
+</nav>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const hamburguerButton = document.querySelector("#hamburguerButton");
+        const navMobile = document.querySelector("#navContentMobile");
+        const closeNavMobile = document.querySelector("#closeNavMobile");
+
+        hamburguerButton?.addEventListener("click", () => {
+            navMobile?.classList.toggle("mobile-nav__show");
+            navMobile?.classList.toggle("mobile-nav__hide");
+        });
+
+        closeNavMobile?.addEventListener("click", () => {
+            navMobile?.classList.toggle("mobile-nav__show");
+            navMobile?.classList.toggle("mobile-nav__hide");
+        });
+    });
+</script>
