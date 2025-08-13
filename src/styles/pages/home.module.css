@@ -64,7 +64,22 @@
     box-shadow: 0 0 0.8rem 0 var(--color-senary);
 }
 
+.modal-contact {
+    height: auto !important;
+}
+
+.modal-contact-title {
+    color: var(--color-primrary);
+}
+
 .modal-contact-form {}
+
+.modal-contact-hero {
+    font-family: var(--font-inika-regular);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
 
 .form-group {
     margin-bottom: 1rem;
@@ -87,7 +102,7 @@
         border-radius: .5rem;
         padding: .8rem;
         resize: none;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         transition: all .4s ease-in-out;
 
         &:focus,
@@ -104,7 +119,6 @@
 }
 
 .error-input {
-    display: none;
     width: 80%;
     color: #d81111;
     font-size: 1.3rem;

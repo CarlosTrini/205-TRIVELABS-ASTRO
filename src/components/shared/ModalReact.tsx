@@ -10,6 +10,7 @@ type propsT = {
     classModal?: string;
     title?: string;
     titleClass?: string;
+    headerClass?: string;
     isOpen: boolean;
     children: React.ReactNode;
     onCloseModal: () => void;
@@ -18,7 +19,7 @@ type propsT = {
 
 const ModalReact = (props: propsT) => {
 
-    const { idModal, classModal = "", titleClass, title, children, isOpen, onCloseModal } = props;
+    const { idModal, classModal = "", titleClass, headerClass, title, children, isOpen, onCloseModal } = props;
 
     const [setshowModal, setShowModal] = useState<boolean>(false);
 
@@ -35,8 +36,8 @@ const ModalReact = (props: propsT) => {
         <>
             <section className={`${css['modal-layer']} ${setshowModal ? css['modal-show'] : css['modal-hide']}`} id={idModal}>
                 <section className={`${classModal} ${css['modal-container']} `}>
-                    <header className={`${titleClass} ${css['header-modal']}`}>
-                        <p>{title}</p>
+                    <header className={`${headerClass} ${css['header-modal']}`}>
+                        <p className={`${titleClass}`}>{title}</p>
                         <button
                             className={`${css['header-modal__close']}`}
                             id="headerModalClose"
