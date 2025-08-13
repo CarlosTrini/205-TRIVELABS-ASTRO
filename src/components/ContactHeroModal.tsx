@@ -17,7 +17,7 @@ const ContactHeroModal = () => {
         message: { value: '', error: '' },
     });
 
-    const handleFormData = (e) => {
+    const handleFormData = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
 
         setFormData({
