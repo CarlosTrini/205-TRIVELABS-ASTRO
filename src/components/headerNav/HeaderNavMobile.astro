@@ -55,6 +55,9 @@ import Image from "astro/components/Image.astro";
         transform: translateX(-100%) translateY(-100%);
         transition: all 0.3s ease-in-out;
     }
+    .overflow-hidden {
+        overflow: hidden;
+    }
 
     .mobile-nav__header {
         display: flex;
@@ -182,11 +185,13 @@ import Image from "astro/components/Image.astro";
         hamburguerButton?.addEventListener("click", () => {
             navMobile?.classList.toggle("mobile-nav__show");
             navMobile?.classList.toggle("mobile-nav__hide");
+            document.body.classList.add("overflow-hidden");
         });
 
         closeNavMobile?.addEventListener("click", () => {
             navMobile?.classList.toggle("mobile-nav__show");
             navMobile?.classList.toggle("mobile-nav__hide");
+            document.body.classList.remove("overflow-hidden");
         });
     });
 </script>

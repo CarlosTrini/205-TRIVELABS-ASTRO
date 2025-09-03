@@ -1,0 +1,41 @@
+---
+import css from "./simplePopover.module.css";
+
+type PlacementT =
+    | "top-left"
+    | "top-center"
+    | "top-right"
+    | "left"
+    | "right"
+    | "bottom-left"
+    | "bottom-center"
+    | "bottom-right";
+
+interface Props {
+    classPopover?: string;
+    classContent?: string;
+    placement?: PlacementT;
+}
+
+const { classPopover, placement } = Astro.props;
+
+const placementSelected: string = placement
+    ? `popover-${placement}`
+    : "popover-top-left";
+
+// const guid = crypto.randomUUID();
+
+console.log("");
+---
+
+<div class={`${css["popover-container"]} ${classPopover} `}>
+    <slot name="popover-trigger" />
+    <div class={`${css["popover-content"]}  ${css[placementSelected]}`}>
+        <slot name="popover-content" />
+    </div>
+</div>
+
+<!-- <SimplePopover placement="top-left">
+            <h3 slot="popover-trigger">Soluciones</h3>
+            <p slot="popover-content">Hola</p>
+        </SimplePopover> -->

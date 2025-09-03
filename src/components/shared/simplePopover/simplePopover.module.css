@@ -1,0 +1,115 @@
+/* los rems deben valer: 1rem = 10px */
+
+.popover-container {
+
+    position: relative;
+
+    &:hover {
+
+
+        .popover-content {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.popover-content {
+    transition: all .3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+
+    width: fit-content;
+    /* max-width: 100px; */
+    padding: .5rem;
+    border-radius: .3rem;
+    box-shadow: 0 2px 8px rgba(236, 232, 232, 0.3);
+
+    letter-spacing: normal;
+    background-color: rgb(185, 182, 182);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+
+
+    h1 {
+        font-size: 1.3rem !important;
+        /* Equivalente a 42px - Título principal de página */
+    }
+
+    h2 {
+        font-size: 1.2rem !important;
+        /* Equivalente a 32px - Títulos de sección importantes */
+    }
+
+    h3 {
+        font-size: 1.2rem !important;
+        /* Equivalente a 24px - Subtítulos */
+    }
+
+    h4 {
+        font-size: 1.2rem !important;
+        /* Equivalente a 18px - Títulos menores o para destacar */
+    }
+
+    h5 {
+        font-size: 1.2rem !important;
+        /* Equivalente a 16px - Puede ser usado para etiquetas o títulos muy pequeños */
+    }
+
+    h6 {
+        font-size: 1.2rem !important;
+        /* Equivalente a 16px - Similar a h5, a menudo el mismo tamaño que el texto del párrafo */
+    }
+
+    p {
+        font-size: 1.2rem !important;
+    }
+
+
+}
+
+.popover-top-left {
+    top: -100%;
+    left: 0;
+}
+
+
+.popover-top-center {
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popover-top-right {
+    top: -100%;
+    right: 0;
+}
+
+.popover-left {
+    right: 105%;
+    top: 50%;
+}
+
+
+.popover-right {
+    left: 105%;
+    top: 50%;
+}
+
+.popover-bottom-left {
+    bottom: -100%;
+    left: 0;
+}
+
+
+.popover-bottom-center {
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popover-bottom-right {
+    bottom: -100%;
+    right: 0;
+}

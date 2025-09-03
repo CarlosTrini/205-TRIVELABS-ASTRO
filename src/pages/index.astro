@@ -1,10 +1,87 @@
 ---
+import Image from "astro/components/Image.astro";
 import Layout from "@layouts/Layout.astro";
 import ContactHeroModal from "@components/ContactHeroModal";
 import css from "@styles/pages/home.module.css";
+import SwiperComponent from "@components/shared/swiper/SwiperComponent.astro";
+import SimplePopover from "@components/shared/simplePopover/SimplePopover.astro";
+import { SwiperSlide } from "astro-swiper";
+
+import logoHtml from "@assets/images/tools/logoHtml.svg";
+import logoCss from "@assets/images/tools/logoCss.svg";
+import logoJs from "@assets/images/tools/logoJavascript.svg";
+import logoReact from "@assets/images/tools/logoReact.svg";
+import logoAstro from "@assets/images/tools/logoAstro.svg";
+import logoTailwind from "@assets/images/tools/logoTailwind.svg";
+import logoNode from "@assets/images/tools/logoNode.svg";
+import logoTypescript from "@assets/images/tools/logoTypescript.svg";
+import logoFigma from "@assets/images/tools/logoFigma.svg";
+import logoGithub from "@assets/images/tools/logoGithub.png";
+
+import landingPageImage from "@assets/images/landing-page.png";
+import webSiteImage from "@assets/images/web-site.png";
+import cmsImage from "@assets/images/cms-image.svg";
+
+const toolsSwiperOptions = {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
+    pagination: {
+        clickable: true,
+    },
+    navigation: true,
+    breakpoints: {
+        450: {
+            // sm
+            slidesPerView: 4,
+            spaceBetween: 10,
+        },
+        // 540: {
+        //     // sm
+        //     slidesPerView: 4,
+        //     spaceBetween: 10,
+        // },
+        640: {
+            // sm
+            slidesPerView: 5,
+            spaceBetween: 10,
+        },
+        // 768: {
+        //     // md
+        //     slidesPerView: 2,
+        //     spaceBetween: 24,
+        // },
+        860: {
+            // sm
+            slidesPerView: 6,
+            spaceBetween: 10,
+        },
+        1024: {
+            // lg
+            slidesPerView: 7,
+            spaceBetween: 10,
+        },
+        1280: {
+            // xl
+            slidesPerView: 8,
+            spaceBetween: 0,
+        },
+        // 1536: {
+        //     // 2xl
+        //     slidesPerView: 5,
+        //     spaceBetween: 48,
+        // },
+    },
+};
 ---
 
 <Layout title="test" description="test description">
+    <!-- HERO -->
     <section class={`${css["hero"]} `}>
         <h1 class={`${css["hero-title"]}`}>
             Construimos tu presencia digital. Soluciones web que crecen contigo.
@@ -18,5 +95,149 @@ import css from "@styles/pages/home.module.css";
             </p>
         </div>
         <ContactHeroModal client:load />
+    </section>
+
+    <!-- BRAND -->
+    <section class={`${css["brand-container"]}`}>
+        <div class={`${css["brand-content"]}`}>
+            <SwiperComponent
+                optionsSwiper={toolsSwiperOptions}
+                classSwiperUser={`${css["swiper-tools"]}`}
+            >
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoHtml} alt="logo-Html" />
+                        <p>Slide 1</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoCss} alt="logo-Css" />
+                        <p>Slide 2</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoJs} alt="logo-Js" />
+                        <p>Slide 3</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoReact} alt="logo-React" />
+                        <p>Slide 4</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoAstro} alt="logo-Astro" />
+                        <p>Slide 5</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoTailwind} alt="logo-Tailwind" />
+                        <p>Slide 6</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoNode} alt="logo-Node" />
+                        <p>Slide 7</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoTypescript} alt="logo-Typescript" />
+                        <p>Slide 8</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoFigma} alt="logo-Figma" />
+                        <p>Slide 9</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div class={`${css["card-tools"]}`}>
+                        <Image src={logoGithub} alt="logo-Github" />
+                        <p>Slide 10</p>
+                    </div>
+                </SwiperSlide>
+            </SwiperComponent>
+            <div class={`${css["brand-text"]}`}>
+                <p>
+                    No solo escribimos código. Le damos estructura a tu visión,
+                    forma a tus ideas y sentido a tu presencia digital.
+                </p>
+
+                <h4>Tu web empieza aquí.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class={`${css["services-container"]}`}>
+        <h3 class={`${css["services-title"]}`}>¿Cómo podemos ayudarte?</h3>
+
+        <article class={`${css["card-services"]} ${css["card-wave-one"]}`}>
+            <section class={`${css["card-text"]}`}>
+                <h4 class={`${css["card-text__title"]}`}>Landing page</h4>
+                <p class={`${css["card-text__subtitle"]}`}>
+                    Impulsa tus campañas con páginas de aterrizaje a medida
+                </p>
+                <p class={`${css["card-text__desc"]}`}>
+                    Desde el diseño hasta la implementación, nuestras landing
+                    pages combinan estética, funcionalidad y enfoque estratégico
+                    para convertir visitantes en oportunidades reales.
+                </p>
+            </section>
+            <section class={`${css["card-image"]}`}>
+                <Image src={landingPageImage} alt="servicio de landingpage" />
+            </section>
+        </article>
+
+        <article class={`${css["card-services"]} ${css["card-wave-two"]}`}>
+            <section class={`${css["card-text"]}`}>
+                <h4 class={`${css["card-text__title"]}`}>WebSites</h4>
+                <p class={`${css["card-text__subtitle"]}`}>
+                    Sitios web diseñados para crecer con tu negocio
+                </p>
+                <p class={`${css["card-text__desc"]}`}>
+                    Desde una página institucional hasta soluciones complejas,
+                    en TriveLabs desarrollamos sitios web pensados para escalar,
+                    conectar y destacar.
+                </p>
+            </section>
+            <section class={`${css["card-image"]}`}>
+                <Image src={webSiteImage} alt="servicio de web site completo" />
+            </section>
+        </article>
+
+        <article class={`${css["card-services"]} ${css["card-wave-three"]}`}>
+            <section class={`${css["card-text"]}`}>
+                <h4 class={`${css["card-text__title"]}`}>CMS</h4>
+                <p class={`${css["card-text__subtitle"]}`}>
+                    El sitio no es el problema. Es el control.
+                </p>
+                <p class={`${css["card-text__desc"]}`}>
+                    Tu negocio, tu web, tu contenido, tus reglas. Desde la
+                    landing hasta el sitio completo, gestioná todo sin depender
+                    de nadie.
+                </p>
+            </section>
+            <section class={`${css["card-image"]}`}>
+                <Image src={cmsImage} alt="servicio de CMS " />
+            </section>
+        </article>
     </section>
 </Layout>
