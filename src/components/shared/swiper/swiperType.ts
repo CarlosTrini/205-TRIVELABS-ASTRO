@@ -26,16 +26,18 @@ export interface SwiperI {
     };
 
     // Navigation (flechas)
-    navigation?: boolean | {
+    navigation?: {
         nextEl?: string | HTMLElement;
         prevEl?: string | HTMLElement;
         disabledClass?: string;
         hiddenClass?: string;
     };
 
-    // Pagination (puntos)
+    // Modules
+    modules?: any[];
+    // Pagination (puntos´/bullets)
     pagination?: {
-        el?: string | HTMLElement;
+        el?: string;
         type?: 'bullets' | 'fraction' | 'progressbar' | 'custom';
         clickable?: boolean;
         dynamicBullets?: boolean;

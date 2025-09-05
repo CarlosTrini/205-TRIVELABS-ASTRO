@@ -17,3 +17,9 @@ BREAKPOINTS
 
     /* 2x large: pantallas grandes */
     /* --breakpoint-2xl: (min-width: 1536px); */
+
+
+
+
+
+https://github.com/pascal-brand38/astro-dev/blob/main/src/content/docs/packages/astro-swiper/Pagination.astro

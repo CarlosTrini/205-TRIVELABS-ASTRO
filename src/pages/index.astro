@@ -18,9 +18,17 @@ import logoTypescript from "@assets/images/tools/logoTypescript.svg";
 import logoFigma from "@assets/images/tools/logoFigma.svg";
 import logoGithub from "@assets/images/tools/logoGithub.png";
 
+import processOne from "@assets/images/process-1.png";
+import processTwo from "@assets/images/process-2.png";
+import processThree from "@assets/images/process-3.png";
+import processFour from "@assets/images/process-4.png";
+import processFive from "@assets/images/process-5.png";
+import processSix from "@assets/images/process-6.png";
+
 import landingPageImage from "@assets/images/landing-page.png";
 import webSiteImage from "@assets/images/web-site.png";
 import cmsImage from "@assets/images/cms-image.svg";
+import type { SwiperI } from "@components/shared/swiper/swiperType";
 
 const toolsSwiperOptions = {
     slidesPerView: 3,
@@ -31,10 +39,6 @@ const toolsSwiperOptions = {
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
     },
-    pagination: {
-        clickable: true,
-    },
-    navigation: true,
     breakpoints: {
         450: {
             // sm
@@ -77,9 +81,90 @@ const toolsSwiperOptions = {
         //     spaceBetween: 48,
         // },
     },
-};
+} as SwiperI;
+
+const processSteps = [
+    {
+        title: "Conocerte",
+        subtitle: "Entender quién eres, qué hacer y tus metas",
+        image: processOne,
+        details: [
+            { title: "Identificar", value: "Objetivos y necesidades." },
+            { title: "Análisis", value: "Público objetivo y competencia" },
+            {
+                title: "Recopilación",
+                value: "Referencias, estilos y funcionalidades",
+            },
+        ],
+    },
+    {
+        title: "Planificación",
+        subtitle: " Organizar el contenido y definir la estructura de la web",
+        image: processTwo,
+        details: [
+            { title: "Rastreo", value: "Mapa del sitio (sitemap)" },
+            { title: "Definición", value: "Páginas y secciones" },
+            { title: "Navegación", value: "Movilidad entre páginas del sitio" },
+        ],
+    },
+    {
+        title: "Bocetar / Diseñar",
+        subtitle: "Crear un esquema y dar vida visual básica de tu web",
+        image: processThree,
+        details: [
+            { title: "Validar", value: "Estructura y flujo de navegación" },
+            { title: "Versiones", value: "Escritorio y móvil" },
+            {
+                title: "Revisión y aprobación",
+                value: "Corroborar que se visualice correctamente",
+            },
+        ],
+    },
+    {
+        title: "Desarrollar",
+        subtitle: "Convertir el diseño en una web funcional",
+        image: processFour,
+        details: [
+            {
+                title: "Programación",
+                value: "Codificación de interfaz y funcionalidades",
+            },
+            { title: "Carga", value: "Se simula con datos válidos" },
+        ],
+    },
+    {
+        title: "Testear",
+        subtitle: "Asegurar que todo funciona correctamente",
+        image: processFive,
+        details: [
+            {
+                title: "Browsers",
+                value: "Revisión en los navegadores más usados",
+            },
+            {
+                title: "Datos",
+                value: "Test de formularios, links, comportamientos, etc.",
+            },
+            { title: "Correción", value: "Corregir errores y ajustes finales" },
+        ],
+    },
+    {
+        title: "Lanzamiento!!",
+        subtitle:
+            "Publicar tu sitio oficialmente en internet. Ya puedes visualizarlo y compartirlo!!",
+        image: processSix,
+        details: [
+            { title: "Publicación", value: "Se sube tu sitio" },
+            {
+                title: "Verificación",
+                value: "Se revisa una vez más que todo este correcto",
+            },
+        ],
+    },
+];
 ---
 
+{}
 <Layout title="test" description="test description">
     <!-- HERO -->
     <section class={`${css["hero"]} `}>
@@ -103,74 +188,75 @@ const toolsSwiperOptions = {
             <SwiperComponent
                 optionsSwiper={toolsSwiperOptions}
                 classSwiperUser={`${css["swiper-tools"]}`}
+                paginationUser={true}
             >
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoHtml} alt="logo-Html" />
-                        <p>Slide 1</p>
+                        <p>HTML</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoCss} alt="logo-Css" />
-                        <p>Slide 2</p>
+                        <p>CSS</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoJs} alt="logo-Js" />
-                        <p>Slide 3</p>
+                        <p>JavaScript</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoReact} alt="logo-React" />
-                        <p>Slide 4</p>
+                        <p>React</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoAstro} alt="logo-Astro" />
-                        <p>Slide 5</p>
+                        <p>Astro</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoTailwind} alt="logo-Tailwind" />
-                        <p>Slide 6</p>
+                        <p>Tailwind CSS</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoNode} alt="logo-Node" />
-                        <p>Slide 7</p>
+                        <p>Node.js</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoTypescript} alt="logo-Typescript" />
-                        <p>Slide 8</p>
+                        <p>TypeScript</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoFigma} alt="logo-Figma" />
-                        <p>Slide 9</p>
+                        <p>Figma</p>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <div class={`${css["card-tools"]}`}>
                         <Image src={logoGithub} alt="logo-Github" />
-                        <p>Slide 10</p>
+                        <p>GitHub</p>
                     </div>
                 </SwiperSlide>
             </SwiperComponent>
@@ -239,5 +325,60 @@ const toolsSwiperOptions = {
                 <Image src={cmsImage} alt="servicio de CMS " />
             </section>
         </article>
+    </section>
+
+    <section class={`${css["banner-container"]}`}>
+        <h2>¿Qué hay de nuestro proceso?</h2>
+        <p>
+            Tenemos muy claro nuestro proceso para poder hacer que tus
+            necesidades sean cubiertas como tú lo deseas
+        </p>
+    </section>
+
+    <section class={`${css["process-container"]}`}>
+        {
+            processSteps.map((step, idx) => (
+                <article class={`${css["process__step"]}`}>
+                    <div class={`${css["process__step--img-container"]}`}>
+                        <h3>
+                            {idx + 1}- {step.title}
+                        </h3>
+                        <div>
+                            <Image src={step.image} alt="servicio de CMS " />
+                        </div>
+                    </div>
+                    <div class={`${css["process__step--text"]}`}>
+                        <h4>{step.subtitle}</h4>
+                        <ul>
+                            {step.details.map((detail) => (
+                                <li>
+                                    <p>
+                                        {detail.title}:{" "}
+                                        <span>{detail.value}</span>
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </article>
+            ))
+        }
+
+        <!-- <article class={`${css["process__step"]}`}>
+            <div class={`${css["process__step--img-container"]}`}>
+                <h3>Title</h3>
+                <div>
+                    <Image src={processOne} alt="servicio de CMS " />
+                </div>
+            </div>
+            <div class={`${css["process__step--text"]}`}>
+                <h4>Subtitle</h4>
+                <ul>
+                    <li>
+                        <p>title: <span>value</span></p>
+                    </li>
+                </ul>
+            </div>
+        </article> -->
     </section>
 </Layout>
