@@ -13,6 +13,7 @@ import Image from "astro/components/Image.astro";
         position: sticky;
         top: 0;
         left: 0;
+        z-index: 3000;
         width: 100%;
         min-height: 8rem;
         display: flex;
@@ -35,9 +36,10 @@ import Image from "astro/components/Image.astro";
     }
 
     .mobile-nav-container {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
+        z-index: 3100;
         background-color: var(--color-dark-full);
         overflow: hidden;
     }
@@ -93,6 +95,9 @@ import Image from "astro/components/Image.astro";
                     transform: translateX(10%);
                     color: var(--color-senary);
                 }
+            }
+            @media (min-width: 460px) {
+                padding: 2rem 10%;
             }
         }
     }
@@ -185,13 +190,13 @@ import Image from "astro/components/Image.astro";
         hamburguerButton?.addEventListener("click", () => {
             navMobile?.classList.toggle("mobile-nav__show");
             navMobile?.classList.toggle("mobile-nav__hide");
-            document.body.classList.add("overflow-hidden");
+            document.body.style.overflowY = "hidden";
         });
 
         closeNavMobile?.addEventListener("click", () => {
             navMobile?.classList.toggle("mobile-nav__show");
             navMobile?.classList.toggle("mobile-nav__hide");
-            document.body.classList.remove("overflow-hidden");
+            document.body.style.overflowY = "auto";
         });
     });
 </script>

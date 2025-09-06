@@ -352,10 +352,10 @@
     justify-content: center;
     color: var(--color-senary);
     font-family: var(--font-bevan-regular);
+    text-align: center;
 
     p {
         font-family: var(--font-inika-bold);
-        text-align: center;
         width: 60%;
         color: var(--color-white-full);
         font-size: 2rem;
@@ -462,4 +462,30 @@
         width: 50%;
         max-width: 70rem;
     }
+}
+
+
+
+/* ------------------------------------------ BLOG SECTION ------------------------------------------*/
+
+.blog-container {
+    min-height: 60rem;
+    width: 100%;
+    padding: var(--padding-80);
+    background-color: var(--color-octonary);
+
+    h2 {
+
+        font-family: var(--font-bevan-regular);
+        color: var(--color-senary);
+        text-align: center;
+        /* font-size: 2.5rem; */
+        padding: 7rem 0;
+    }
+}
+
+.swiper-blog {
+    /* background-color: blue; */
+    width: 80%;
+    height: 30rem;
 }

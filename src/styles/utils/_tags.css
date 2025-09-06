@@ -1,12 +1,17 @@
 html {
     font-size: 62.5%;
     /* Esto hace que 1rem sea igual a 10px */
+
+    scrollbar-color: var(--color-senary) var(--color-secondary);
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
 }
 
 body {
     background-color: var(--color-secondary);
     font-family: var(--font-inika-regular);
     letter-spacing: .2rem;
+    overflow-x: hidden;
 }
 
 /* --- Títulos (Headings) --- */

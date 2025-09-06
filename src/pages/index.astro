@@ -5,7 +5,7 @@ import ContactHeroModal from "@components/ContactHeroModal";
 import css from "@styles/pages/home.module.css";
 import SwiperComponent from "@components/shared/swiper/SwiperComponent.astro";
 import SimplePopover from "@components/shared/simplePopover/SimplePopover.astro";
-import { SwiperSlide } from "astro-swiper";
+import { Swiper, SwiperSlide } from "astro-swiper";
 
 import logoHtml from "@assets/images/tools/logoHtml.svg";
 import logoCss from "@assets/images/tools/logoCss.svg";
@@ -167,7 +167,11 @@ const processSteps = [
 {}
 <Layout title="test" description="test description">
     <!-- HERO -->
-    <section class={`${css["hero"]} `}>
+    <section
+        class={`${css["hero"]} `}
+        data-aos="fade-down"
+        data-aos-duration="1500"
+    >
         <h1 class={`${css["hero-title"]}`}>
             Construimos tu presencia digital. Soluciones web que crecen contigo.
         </h1>
@@ -183,8 +187,16 @@ const processSteps = [
     </section>
 
     <!-- BRAND -->
-    <section class={`${css["brand-container"]}`}>
-        <div class={`${css["brand-content"]}`}>
+    <section
+        class={`${css["brand-container"]}`}
+        data-aos="fade-up-right"
+        data-aos-duration="1000"
+    >
+        <div
+            class={`${css["brand-content"]}`}
+            data-aos="flip-left"
+            data-aos-duration="2000"
+        >
             <SwiperComponent
                 optionsSwiper={toolsSwiperOptions}
                 classSwiperUser={`${css["swiper-tools"]}`}
@@ -273,9 +285,12 @@ const processSteps = [
 
     <!-- SERVICES -->
     <section class={`${css["services-container"]}`}>
-        <h3 class={`${css["services-title"]}`}>¿Cómo podemos ayudarte?</h3>
+        <h2 class={`${css["services-title"]}`}>¿Cómo podemos ayudarte?</h2>
 
-        <article class={`${css["card-services"]} ${css["card-wave-one"]}`}>
+        <article
+            class={`${css["card-services"]} ${css["card-wave-one"]}`}
+            data-aos="flip-left"
+        >
             <section class={`${css["card-text"]}`}>
                 <h4 class={`${css["card-text__title"]}`}>Landing page</h4>
                 <p class={`${css["card-text__subtitle"]}`}>
@@ -292,7 +307,10 @@ const processSteps = [
             </section>
         </article>
 
-        <article class={`${css["card-services"]} ${css["card-wave-two"]}`}>
+        <article
+            class={`${css["card-services"]} ${css["card-wave-two"]}`}
+            data-aos="flip-right"
+        >
             <section class={`${css["card-text"]}`}>
                 <h4 class={`${css["card-text__title"]}`}>WebSites</h4>
                 <p class={`${css["card-text__subtitle"]}`}>
@@ -309,7 +327,10 @@ const processSteps = [
             </section>
         </article>
 
-        <article class={`${css["card-services"]} ${css["card-wave-three"]}`}>
+        <article
+            class={`${css["card-services"]} ${css["card-wave-three"]}`}
+            data-aos="flip-left"
+        >
             <section class={`${css["card-text"]}`}>
                 <h4 class={`${css["card-text__title"]}`}>CMS</h4>
                 <p class={`${css["card-text__subtitle"]}`}>
@@ -327,6 +348,8 @@ const processSteps = [
         </article>
     </section>
 
+    <!-- PROCESS -->
+
     <section class={`${css["banner-container"]}`}>
         <h2>¿Qué hay de nuestro proceso?</h2>
         <p>
@@ -338,7 +361,11 @@ const processSteps = [
     <section class={`${css["process-container"]}`}>
         {
             processSteps.map((step, idx) => (
-                <article class={`${css["process__step"]}`}>
+                <article
+                    class={`${css["process__step"]}`}
+                    data-aos={idx % 2 == 0 ? "fade-right" : "fade-left"}
+                    data-aos-duration="1400"
+                >
                     <div class={`${css["process__step--img-container"]}`}>
                         <h3>
                             {idx + 1}- {step.title}
@@ -380,5 +407,53 @@ const processSteps = [
                 </ul>
             </div>
         </article> -->
+    </section>
+
+    <!-- BLOG -->
+
+    <section
+        class={`${css["blog-container"]}`}
+        data-aos="fade-up-right"
+        data-aos-duration="1000"
+    >
+        <h2 class={`${css["blog-title"]}`}>Visita nuestro blog</h2>
+
+        <section>
+            <SwiperComponent
+                classSwiperUser={`${css["swiper-blog"]}`}
+                paginationUser={true}
+            >
+                <SwiperSlide>
+                    <article class={`${css["card-blog"]}`}>
+                        <div class={`${css["card-blog--img"]}`}>
+                            <!-- <Image
+                                src={processOne}
+                                alt="imagen de blog"
+                                title="titulo del blog"
+                            /> -->
+                        </div>
+                        <div class={`${css["card-blog--text"]}`}>
+                            <h4>Título del blog</h4>
+                            <p>
+                                Breve descripción del contenido del blog para
+                                atraer a los lectores.
+                            </p>
+                            <a
+                                href="posts/post-1/"
+                                class={`${css["card-blog--btn"]}`}
+                            >
+                                Leer más
+                            </a>
+                        </div>
+                    </article>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <h2>hola</h2>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <h2>hola</h2>
+                </SwiperSlide>
+            </SwiperComponent>
+        </section>
     </section>
 </Layout>

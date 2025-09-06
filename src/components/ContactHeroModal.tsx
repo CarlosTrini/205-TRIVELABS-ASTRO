@@ -1,5 +1,5 @@
-import { useState } from "react";
-import ModalReact from "./shared/ModalReact";
+import { useEffect, useState } from "react";
+import ModalReact from "./shared/modalReact/ModalReact";
 import css from "@styles/pages/home.module.css";
 
 interface FormDataI {
@@ -70,6 +70,16 @@ const ContactHeroModal = () => {
             message: { value: '', error: '' },
         });
     };
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+
+        }
+    }, [isOpen]);
+
 
     return (
         <>

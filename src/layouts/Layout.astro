@@ -4,6 +4,7 @@ import BaseHead from "@components/BaseHead.astro";
 
 import css from "@styles/layout/layout.module.css";
 import HeaderNavDesktop from "@components/headerNav/HeaderNavDesktop.astro";
+import ScrollTopTopButton from "@components/shared/scrollTopTopButton/ScrollTopTopButton.astro";
 
 const {
 	title = "",
@@ -20,5 +21,12 @@ const {
 		<HeaderNavMobile />
 		<HeaderNavDesktop />
 		<slot />
+		<ScrollTopTopButton />
 	</body>
 </html>
+
+<script>
+	import AOS from "aos";
+	import "aos/dist/aos.css";
+	AOS.init();
+</script>
