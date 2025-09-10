@@ -470,7 +470,7 @@
 
 .blog-container {
     min-height: 60rem;
-    width: 100%;
+    /* width: 100%; */
     padding: var(--padding-80);
     background-color: var(--color-octonary);
 
@@ -485,7 +485,13 @@
 }
 
 .swiper-blog {
-    /* background-color: blue; */
-    width: 80%;
-    height: 30rem;
+    width: auto;
+    min-height: 30rem;
+    padding-bottom: 4rem !important;
+    padding-top: 4rem !important;
+
+    @media (min-width: 1024px) {
+        max-width: 100rem;
+        margin: auto;
+    }
 }

@@ -7,7 +7,6 @@ image:
     url: '/images/blog-image-fake.jpg'
     alt: 'El logotipo completo de Astro.'
 tags: ["astro", "bloguear", "aprender en público"]
-readingTime: '5 minutos'
 ---
 # Mi primera publicación en el blog
 
@@ -18,7 +17,7 @@ Publicado el: 2022-07-01
 ## Lo que he conseguido
 
 1. **Instalación de Astro**: En primer lugar, he creado un nuevo proyecto Astro y configurar mis cuentas en línea.
-                                                                                                     
+
 2. **Creación de páginas**: Luego aprendí cómo hacer páginas creando nuevos archivos `.astro` y colocándolos en la carpeta `src/pages/`.
 
 3. **Creación de publicaciones**: ¡Esta es mi primera publicación! ¡Ahora tengo páginas de Astro y publicaciónes en Markdown!

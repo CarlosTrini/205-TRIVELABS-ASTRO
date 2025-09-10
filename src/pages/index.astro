@@ -4,7 +4,6 @@ import Layout from "@layouts/Layout.astro";
 import ContactHeroModal from "@components/ContactHeroModal";
 import css from "@styles/pages/home.module.css";
 import SwiperComponent from "@components/shared/swiper/SwiperComponent.astro";
-import SimplePopover from "@components/shared/simplePopover/SimplePopover.astro";
 import { Swiper, SwiperSlide } from "astro-swiper";
 
 import logoHtml from "@assets/images/tools/logoHtml.svg";
@@ -29,6 +28,11 @@ import landingPageImage from "@assets/images/landing-page.png";
 import webSiteImage from "@assets/images/web-site.png";
 import cmsImage from "@assets/images/cms-image.svg";
 import type { SwiperI } from "@components/shared/swiper/swiperType";
+import CardBlogPost from "@components/CardBlogPost.astro";
+
+const allPosts: any[] = Object.values(
+    await import.meta.glob("./posts/*.md", { eager: true }),
+);
 
 const toolsSwiperOptions = {
     slidesPerView: 3,
@@ -80,6 +84,29 @@ const toolsSwiperOptions = {
         //     slidesPerView: 5,
         //     spaceBetween: 48,
         // },
+    },
+} as SwiperI;
+
+const blogSwiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+        640: {
+            // sm
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        860: {
+            // sm
+            slidesPerView: 3,
+            spaceBetween: 10,
+        },
     },
 } as SwiperI;
 
@@ -164,8 +191,7 @@ const processSteps = [
 ];
 ---
 
-{}
-<Layout title="test" description="test description">
+s<Layout title="test" description="test description">
     <!-- HERO -->
     <section
         class={`${css["hero"]} `}
@@ -189,14 +215,10 @@ const processSteps = [
     <!-- BRAND -->
     <section
         class={`${css["brand-container"]}`}
-        data-aos="fade-up-right"
+        data-aos="flip-up"
         data-aos-duration="1000"
     >
-        <div
-            class={`${css["brand-content"]}`}
-            data-aos="flip-left"
-            data-aos-duration="2000"
-        >
+        <div class={`${css["brand-content"]}`}>
             <SwiperComponent
                 optionsSwiper={toolsSwiperOptions}
                 classSwiperUser={`${css["swiper-tools"]}`}
@@ -410,10 +432,9 @@ const processSteps = [
     </section>
 
     <!-- BLOG -->
-
     <section
         class={`${css["blog-container"]}`}
-        data-aos="fade-up-right"
+        data-aos="flip-up"
         data-aos-duration="1000"
     >
         <h2 class={`${css["blog-title"]}`}>Visita nuestro blog</h2>
@@ -422,37 +443,9 @@ const processSteps = [
             <SwiperComponent
                 classSwiperUser={`${css["swiper-blog"]}`}
                 paginationUser={true}
+                optionsSwiper={blogSwiperOptions}
             >
-                <SwiperSlide>
-                    <article class={`${css["card-blog"]}`}>
-                        <div class={`${css["card-blog--img"]}`}>
-                            <!-- <Image
-                                src={processOne}
-                                alt="imagen de blog"
-                                title="titulo del blog"
-                            /> -->
-                        </div>
-                        <div class={`${css["card-blog--text"]}`}>
-                            <h4>Título del blog</h4>
-                            <p>
-                                Breve descripción del contenido del blog para
-                                atraer a los lectores.
-                            </p>
-                            <a
-                                href="posts/post-1/"
-                                class={`${css["card-blog--btn"]}`}
-                            >
-                                Leer más
-                            </a>
-                        </div>
-                    </article>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h2>hola</h2>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h2>hola</h2>
-                </SwiperSlide>
+                {allPosts.map((post) => <CardBlogPost post={post} />)}
             </SwiperComponent>
         </section>
     </section>

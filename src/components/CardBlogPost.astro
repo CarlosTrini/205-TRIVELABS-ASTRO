@@ -1,0 +1,27 @@
+---
+import css from "@styles/components/CardBlogPost.module.css";
+import { SwiperSlide } from "astro-swiper";
+
+const { post } = Astro.props;
+const { frontmatter, file, url } = post;
+---
+
+<SwiperSlide>
+    <article class={`${css["card-blog"]}`}>
+        <div class={`${css["card-blog--img"]}`}>
+            <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+        </div>
+        <div class={`${css["card-blog--text"]}`}>
+            <h3>{frontmatter.title}</h3>
+            <p>{frontmatter.description}</p>
+            <div>
+                <a
+                    href={url}
+                    class={`${css["card-blog--btn"]} g-button-rounded-min`}
+                >
+                    Leer más
+                </a>
+            </div>
+        </div>
+    </article>
+</SwiperSlide>
