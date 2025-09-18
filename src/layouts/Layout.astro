@@ -1,6 +1,7 @@
 ---
 import HeaderNavMobile from "@components/headerNav/HeaderNavMobile.astro";
 import BaseHead from "@components/BaseHead.astro";
+import Footer from "@components/Footer.astro";
 
 import css from "@styles/layout/layout.module.css";
 import HeaderNavDesktop from "@components/headerNav/HeaderNavDesktop.astro";
@@ -22,7 +23,7 @@ const {
 		<HeaderNavDesktop />
 		<slot />
 		<ScrollTopTopButton />
-	</body>
+	</body><Footer />
 </html>
 
 <script>

@@ -24,5 +24,6 @@ BREAKPOINTS
 
 https://github.com/pascal-brand38/astro-dev/blob/main/src/content/docs/packages/astro-swiper/Pagination.astro
 
+https://github.com/withastro/blog-tutorial-demo/blob/complete/src/layouts/MarkdownPostLayout.astro
 
 https://docs.astro.build/es/tutorial/5-astro-api/1/

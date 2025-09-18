@@ -473,6 +473,7 @@
     /* width: 100%; */
     padding: var(--padding-80);
     background-color: var(--color-octonary);
+    padding-bottom: 5rem !important;
 
     h2 {
 

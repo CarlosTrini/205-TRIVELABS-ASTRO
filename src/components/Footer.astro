@@ -1,0 +1,68 @@
+---
+import Image from "astro/components/Image.astro";
+import css from "@styles/components/footer.module.css";
+import logoYellow from "@assets/images/LOGO-YELLOW.png";
+import whatsappIcon from "@assets/images/whatsapp.png";
+import facebookIcon from "@assets/images/facebook.png";
+import githubIcon from "@assets/images/github.png";
+import emailIcon from "@assets/images/check-blue.png";
+---
+
+<footer
+    class={`${css["footer-container"]}`}
+    data-aos="fade-down"
+    data-aos-duration="1000"
+>
+    <section class={`${css["info-section"]}`}>
+        <section class={`${css["footer-logo"]}`}>
+            <div class={`${css["footer-img"]}`}>
+                <Image src={logoYellow} alt="TriveLabs logo" />
+            </div>
+        </section>
+        <section class={`${css["footer-text"]}`}>
+            <h2>
+                Contáctanos sin compromiso y hagamos juntos que tu sitio sea
+                real
+            </h2>
+        </section>
+
+        <section class={`${css["btns-container"]}`}>
+            <button class={` g-button-rounded ${css["btn-whatsapp"]} `}>
+                <div class={`${css["btn-image-container"]}`}>
+                    <Image src={whatsappIcon} alt="Icono de whatsapp" />
+                </div>
+                <p>Whatsapp</p>
+            </button>
+            <button class={` g-button-rounded ${css["btn-email"]}`}>
+                <div class={`${css["btn-image-container"]}`}>
+                    <Image src={emailIcon} alt="Icono de email/correo" />
+                </div>
+                correo@correo.com
+            </button>
+        </section>
+    </section>
+    <section class={`${css["copyright-section"]}`}>
+        <ul class={`${css["terms-privacy"]}`}>
+            <li><a href="/terms-and-conditions">Términos y condiciones</a></li>
+            <li><a href="/privacy">Aviso de privacidad</a></li>
+        </ul>
+        <p>© 2024 TriveLabs. Todos los derechos reservados.</p>
+        <ul class={`${css["social-links-footer"]}`}>
+            <li>
+                <a href="#"
+                    ><Image src={facebookIcon} alt={"icono de facebook"} /></a
+                >
+            </li>
+            <li>
+                <a href="#"
+                    ><Image src={githubIcon} alt={"icono de github"} /></a
+                >
+            </li>
+            <li>
+                <a href="#"
+                    ><Image src={whatsappIcon} alt={"icono de whatsapp"} /></a
+                >
+            </li>
+        </ul>
+    </section>
+</footer>

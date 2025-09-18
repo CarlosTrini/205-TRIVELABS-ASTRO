@@ -1,0 +1,154 @@
+.footer-container {
+    width: 100%;
+    /* min-height: 30rem; */
+    background-color: var(--color-dark-full);
+    /* background: url('/src/assets/images/background-footer.jpg') no-repeat center/cover;
+    background-attachment: fixed; */
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: var(--padding-90);
+
+    @media (min-width: 920px) {
+        flex-direction: row;
+
+    }
+}
+
+.footer-logo {
+
+    .footer-img {
+        width: 20rem;
+        height: 20rem;
+
+    }
+
+    @media (min-width: 920px) {
+
+        width: 33%;
+    }
+}
+
+.footer-text {
+
+    @media (min-width: 920px) {
+        width: 33%;
+
+    }
+
+    h2 {
+        margin: 0 auto;
+        width: 80%;
+        font-family: var(--font-bevan-regular);
+        color: var(--color-senary);
+        text-align: center;
+        font-size: 2rem !important;
+    }
+
+    @media (min-width: 920px) {}
+
+}
+
+.btns-container {
+    margin-top: 3rem;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+
+    @media (min-width: 920px) {
+        width: 33%;
+        margin-top: 0;
+    }
+
+}
+
+.btn-whatsapp {
+    background-color: #64B161;
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 0 2rem 0 #64B161;
+    display: flex;
+}
+
+.btn-email {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 0 2rem 0 var(--color-primary);
+    display: flex;
+}
+
+.btn-image-container {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.copyright-section {
+
+    padding: var(--padding-90);
+    margin-top: 8rem;
+    padding-bottom: 2rem !important;
+
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    a,
+    p {
+        font-size: 1.2rem !important
+    }
+
+
+    @media (min-width: 920px) {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 3rem;
+    }
+}
+
+.social-links-footer {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 3rem;
+
+    a>img {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 1rem;
+        border-radius: 50%;
+    }
+
+    img:hover {
+        box-shadow: 0 0 2rem 0 var(--color-senary);
+    }
+
+
+    @media (min-width: 920px) {
+        padding-bottom: 0;
+    }
+}
+
+.terms-privacy {
+    display: flex;
+    gap: 2rem;
+
+    li {
+
+        &:hover {
+            color: var(--color-senary);
+        }
+    }
+}
