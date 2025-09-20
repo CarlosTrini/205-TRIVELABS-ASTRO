@@ -22,3 +22,35 @@
         transform: scale(1.05);
     }
 }
+
+.g-page-main {
+
+    min-height: 100vh;
+    margin-top: 8rem;
+
+    @media (min-width: 768px) {
+        margin-top: 7rem;
+    }
+}
+
+.g-page-hero {
+    background-color: var(--color-quinary);
+    color: var(--color-secondary);
+    padding: 3rem 0;
+
+    h2 {
+        text-align: center;
+        font-family: var(--font-bevan-regular);
+
+    }
+
+}
+
+.g-show-senary {
+    color: var(--color-senary);
+    font-weight: 700;
+}
+
+g-page-content {
+    padding: var(--padding-80);
+}

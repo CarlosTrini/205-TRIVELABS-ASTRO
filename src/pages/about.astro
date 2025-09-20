@@ -1,0 +1,62 @@
+---
+import iconAboutOne from "@assets/images/light.png";
+import Layout from "@layouts/Layout.astro";
+
+import css from "@styles/pages/about.module.css";
+
+interface CardsI {
+    icon: string;
+    title: string;
+    text: string;
+}
+
+const cardsAbout = [
+    {
+        icon: iconAboutOne,
+        title: "Creatividad",
+        text: "Diseñamos con intención y personalidad. Cada proyecto es único.",
+    },
+];
+
+const misionVision = [
+    {
+        title: "Misión",
+        content:
+            "Crear experiencias digitales a través del diseño, de la mano con desarrollos modernos y funcionales, ayudandote a  alcanzar sus objetivos comerciales.",
+    },
+    {
+        title: "Visión",
+        content:
+            "Convertirnos en una agencia de referencia en soluciones web accesibles y efectivas, reconocida por calidad y resultados que podemos brindamos a nuestros clientes, impulsando su crecimiento en el mundo digital.",
+    },
+];
+---
+
+<Layout>
+    <main class={` g-page-main`}>
+        <section class={`g-page-hero`}>
+            <h2>Nosotros</h2>
+        </section>
+
+        <section class={`${css["about__content-cont"]}`}>
+            <p class={`${css["about__content-title"]}`}>
+                En <span class={`g-show-senary`}>TriveLabs</span>, somos un
+                equipo apasionado por el diseño y la tecnología.. No hacemos
+                sitios web. Creamos espacios digitales donde tus ideas cobran
+                vida y tus clientes quieren quedarse.
+            </p>
+        </section>
+        <section class={`g-page-content`}>
+            <section class={`${css["misionVision__container"]}`}>
+                {
+                    misionVision.map((value) => (
+                        <div class={`${css["visual__content"]}`}>
+                            <h3>{value.title}</h3>
+                            <p>{value.content}</p>
+                        </div>
+                    ))
+                }
+            </section>
+        </section>
+    </main>
+</Layout>
